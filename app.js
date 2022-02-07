@@ -1,50 +1,42 @@
 // Book Class: Represents a Book
-
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
+function Book(title, author) {
+  this.title = title;
+  this.author = author;
 }
 
-// Store Class: Handles Storage
+function getBooks() {
+  let books;
+  if (localStorage.getItem('books') === null) {
+    books = [];
+  } else {
+    books = JSON.parse(localStorage.getItem('books'));
+  }
 
-class Store {
-  static getBooks() {
-    let books;
-    if (localStorage.getItem('books') === null) {
-      books = [];
-    } else {
-      books = JSON.parse(localStorage.getItem('books'));
+  return books;
+}
+
+function addBook(book) {
+  const books = getBooks();
+  books.push(book);
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+function removeBook(author) {
+  const books = getBooks();
+
+  books.forEach((book, index) => {
+    if (book.author === author) {
+      books.splice(index, 1);
     }
+  });
 
-    return books;
-  }
-
-  static addBook(book) {
-    const books = Store.getBooks();
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-  }
-
-  static removeBook(author) {
-    const books = Store.getBooks();
-
-    books.forEach((book, index) => {
-      if (book.author === author) {
-        books.splice(index, 1);
-      }
-    });
-
-    localStorage.setItem('books', JSON.stringify(books));
-  }
+  localStorage.setItem('books', JSON.stringify(books));
 }
 
 // UI Class: Handle UL tasks
-
 class UI {
   static displayBooks() {
-    const books = Store.getBooks();
+    const books = getBooks();
     books.forEach((book) => UI.addBookToList(book));
   }
 
@@ -85,12 +77,12 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   const book = new Book(title, author);
   UI.addBookToList(book);
   UI.clearFields();
-  Store.addBook(book);
+  addBook(book);
 });
 
 // Event: Remove A Book
 
 document.querySelector('#book-list').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
-  Store.removeBook((e.target.parentElement.previousElementSibling.textContent));
+  removeBook((e.target.parentElement.previousElementSibling.textContent));
 });
