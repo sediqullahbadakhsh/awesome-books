@@ -11,21 +11,32 @@
     <main>
       <div class="book">
         <h1>Awesome Books</h1>
-        <form id="book-form">
-          <input type="text" class="title" placeholder="Title" />
-          <input type="text" class="author" placeholder="Author" />
-          <button type="submit" class="button">Add</button>
-        </form>
-
-        <div class="list">
-          <table class="book-list">
+        <table class="table">
+          <thead>
             <tr>
               <th>Title</th>
               <th>Author</th>
               <th>Action</th>
             </tr>
-          </table>
-        </div>
+          </thead>
+          <tbody id="book-list"></tbody>
+        </table>
+
+        <form id="book-form">
+          <input
+            type="text"
+            id="title"
+            class="text-inpute"
+            placeholder="Title"
+          />
+          <input
+            type="text"
+            id="author"
+            class="text-inpute"
+            placeholder="Author"
+          />
+          <button type="submit" id="button">Add</button>
+        </form>
       </div>
     </main>
     <script src="app.js"></script>
