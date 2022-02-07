@@ -4,9 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awsome Books</title>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main></main>
+    <main>
+      <div class="book">
+        <h1>Awesome Books</h1>
+        <form id="book-form">
+          <input type="text" class="title" placeholder="Title" />
+          <input type="text" class="author" placeholder="Author" />
+          <button type="submit" class="button">Add</button>
+        </form>
+
+        <div class="list">
+          <table class="book-list">
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td>Programming</td>
+              <td>John Do</td>
+              <td>
+                <form><button>remove</button></form>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
