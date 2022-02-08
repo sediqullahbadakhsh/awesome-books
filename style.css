@@ -3,18 +3,50 @@
   margin: 0;
   box-sizing: border-box;
 }
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
 
+/***NavBar Section***/
+header {
+  display: flex;
+  padding: 5px 60px;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-bottom: solid 3px black;
+}
+.navbar {
+  display: flex;
+  column-gap: 20px;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+}
+.navbar a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+  color: black;
+}
+/***list Section***/
 .book {
+  position: absolute;
+  background-color: beige;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 90px);
   justify-content: flex-start;
   align-items: center;
 }
 
 .book h1 {
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 table {
@@ -34,6 +66,23 @@ table tr {
 table tbody tr {
   border-bottom: none;
 }
+.delete {
+  cursor: pointer;
+}
+/*** Add new Section ***/
+.add-new {
+  position: absolute;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 90px);
+  justify-content: flex-start;
+  align-items: center;
+}
+.add-new h2 {
+  padding-top: 40px;
+}
 
 form {
   margin-top: 10px;
@@ -51,4 +100,37 @@ button {
 form button {
   align-self: flex-end;
   width: 40px;
+  cursor: pointer;
+}
+
+/***Contact Section***/
+.contact-us {
+  position: absolute;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 90px);
+  justify-content: flex-start;
+  align-items: center;
+}
+.contact-us h2 {
+  padding: 40px 0;
+}
+.contact-us p {
+  padding-bottom: 20px;
+}
+.contact-us ul {
+  padding-left: 60px;
+}
+/***Footer Section***/
+footer {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+  font-weight: 800;
+  border-top: solid 2px black;
+  padding-top: 5px;
 }
