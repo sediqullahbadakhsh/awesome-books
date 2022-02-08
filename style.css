@@ -43,6 +43,7 @@ header {
   height: calc(100vh - 90px);
   justify-content: flex-start;
   align-items: center;
+  z-index: 1;
 }
 
 .book h1 {
