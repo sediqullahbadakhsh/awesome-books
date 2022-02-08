@@ -6,10 +6,10 @@ function Book(title, author) {
 
 function getBooks() {
   let books;
-  if (localStorage.getItem('books') === null) {
+  if (localStorage.getItem("books") === null) {
     books = [];
   } else {
-    books = JSON.parse(localStorage.getItem('books'));
+    books = JSON.parse(localStorage.getItem("books"));
   }
 
   return books;
@@ -18,7 +18,7 @@ function getBooks() {
 function addBook(book) {
   const books = getBooks();
   books.push(book);
-  localStorage.setItem('books', JSON.stringify(books));
+  localStorage.setItem("books", JSON.stringify(books));
 }
 
 function removeBook(author) {
@@ -30,7 +30,7 @@ function removeBook(author) {
     }
   });
 
-  localStorage.setItem('books', JSON.stringify(books));
+  localStorage.setItem("books", JSON.stringify(books));
 }
 
 // UI Class: Handle UL tasks
@@ -41,38 +41,38 @@ class UI {
   }
 
   static addBookToList(book) {
-    const list = document.querySelector('#book-list');
-    const row = document.createElement('tr');
+    const list = document.querySelector("#book-list");
+    const row = document.createElement("tr");
 
     row.innerHTML = `
     <td>${book.title}</td>
     <td>${book.author}</td>
-    <td><a href="#" class="delete">remove</a></form></td>
+    <td><button type="submit" class="delete">Remove</button></td>
     `;
     list.appendChild(row);
   }
 
   static deleteBook(el) {
-    if (el.classList.contains('delete')) {
+    if (el.classList.contains("delete")) {
       el.parentElement.parentElement.remove();
     }
   }
 
   static clearFields() {
-    document.querySelector('#title').value = '';
-    document.querySelector('#author').value = '';
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
   }
 }
 
 // Events: Display Books
 
-document.addEventListener('DOMContentLoaded', UI.displayBooks);
+document.addEventListener("DOMContentLoaded", UI.displayBooks);
 
 // Event: Add a Book
-document.querySelector('#book-form').addEventListener('submit', (e) => {
+document.querySelector("#book-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  const title = document.querySelector('#title').value;
-  const author = document.querySelector('#author').value;
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
 
   const book = new Book(title, author);
   UI.addBookToList(book);
@@ -82,7 +82,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 // Event: Remove A Book
 
-document.querySelector('#book-list').addEventListener('click', (e) => {
+document.querySelector("#book-list").addEventListener("click", (e) => {
   UI.deleteBook(e.target);
-  removeBook((e.target.parentElement.previousElementSibling.textContent));
+  removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
