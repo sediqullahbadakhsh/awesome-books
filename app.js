@@ -73,8 +73,12 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-
   const book = new Book(title, author);
+  
+  if (title === "" || author === "") {
+    alert("Title and Author fields must be filled out");
+    return false
+  }
   UI.addBookToList(book);
   UI.clearFields();
   addBook(book);
