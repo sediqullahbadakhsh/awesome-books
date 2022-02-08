@@ -3,7 +3,11 @@
 # Awesome Books
 
 > In this project we are making a library where you can save all your favorite books!
+> in this Milestone we only add the following functionalities using Objects:
 
+- Adding to list
+- Removing from list
+- On reaload the saved data stores
 
 ## Built With
 
@@ -13,7 +17,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://sediqullahbadakhsh.github.io/awesome-books/)
 
 ## Authors
 
