@@ -47,7 +47,7 @@ class UI {
     row.innerHTML = `
     <td>${book.title}</td>
     <td>${book.author}</td>
-    <td><a href="#" class="delete">remove</a></form></td>
+    <td><button type="submit" class="delete">Remove</button></td>
     `;
     list.appendChild(row);
   }
@@ -73,16 +73,21 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-
   const book = new Book(title, author);
+
+  if (title === '' || author === '') {
+    alert('Title and Author fields must be filled out');
+    return false;
+  }
   UI.addBookToList(book);
   UI.clearFields();
   addBook(book);
+  return true;
 });
 
 // Event: Remove A Book
 
 document.querySelector('#book-list').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
-  removeBook((e.target.parentElement.previousElementSibling.textContent));
+  removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
