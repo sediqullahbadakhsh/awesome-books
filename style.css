@@ -49,7 +49,7 @@ header {
   height: calc(100vh - 90px);
   justify-content: flex-start;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
 }
 
 .book h1 {
@@ -92,6 +92,7 @@ background-color: rgba(128, 128, 128, 0.411);
   height: calc(100vh - 90px);
   justify-content: flex-start;
   align-items: center;
+  z-index: 1;
 }
 
 .add-new h2 {
