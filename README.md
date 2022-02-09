@@ -4,18 +4,6 @@
 
 > In this project we are making a library where you can save all your favorite books!
 
-> 1St milstone:
-
-- Adding to list
-- Removing from list
-- On reaload the saved data stores
-
-> 2nd milsone:
-
-- Used class
-- Create Methods
-- Add CSS styles
-
 ## Built With
 
 - Javascript
