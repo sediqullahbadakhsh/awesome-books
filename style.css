@@ -75,11 +75,12 @@ table tbody tr {
 }
 
 table tbody tr:nth-child(even) {
-background-color: rgba(128, 128, 128, 0.411);
+  background-color: rgba(128, 128, 128, 0.411);
 }
 
 .delete {
   cursor: pointer;
+  box-shadow: 3px 2px 3px rgb(31, 29, 29);
 }
 
 /*** Add new Section ***/
