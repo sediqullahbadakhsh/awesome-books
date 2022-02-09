@@ -7,52 +7,61 @@ const linkContact = document.getElementById('contact-link');
 const sectionList = document.getElementById('list');
 const sectionAdd = document.getElementById('add');
 const sectionContact = document.getElementById('contact');
+
+const links = document.getElementsByClassName('links')
+const sections = document.getElementsByClassName('section')
     
 linkList.addEventListener('click', () => {
-  if (sectionList.classList.contains('hidden')) {
-    sectionList.classList.remove('hidden');
+  for (let i = 0; i < links.length; i += 1 ) {
+    if (links[i].classList.contains('active')) {
+      links[i].classList.remove('active')
+    }
+  } 
+  
+  linkList.classList.add('active') 
+  
+  for (let i = 0; i < sections.length; i += 1) {
+    if (!sections[i].classList.contains('hidden')){
+      sections[i].classList.add('hidden')
+    }
   }
 
-  if (sectionAdd.classList.contains('hidden')) {
-    return true;
-  }
-  sectionAdd.classList.add('hidden');
-
-  if (sectionContact.classList.contains('hidden')) {
-    return true;
-  }
-  sectionContact.classList.add('hidden');
+  sectionList.classList.remove('hidden')
 });
 
 linkAdd.addEventListener('click', () => {
-  if (sectionAdd.classList.contains('hidden')) {
-    sectionAdd.classList.remove('hidden');
+  for (let i = 0; i < links.length; i += 1 ) {
+    if (links[i].classList.contains('active')) {
+      links[i].classList.remove('active')
+    }
+  } 
+  
+  linkAdd.classList.add('active')
+  
+  for (let i = 0; i < sections.length; i += 1) {
+    if (!sections[i].classList.contains('hidden')){
+      sections[i].classList.add('hidden')
+    }
   }
 
-  if (sectionList.classList.contains('hidden')) {
-    return true;
-  }
-  sectionList.classList.add('hidden');
-
-  if (sectionContact.classList.contains('hidden')) {
-    return true;
-  }
-  sectionContact.classList.add('hidden');
+  sectionAdd.classList.remove('hidden')
 
 });
 
 linkContact.addEventListener('click', () => {
-  if (sectionContact.classList.contains('hidden')) {
-    sectionContact.classList.remove('hidden');
-  }
-  if (sectionAdd.classList.contains('hidden')) {
-    return true;
+  for (let i = 0; i < links.length; i += 1 ) {
+    if (links[i].classList.contains('active')) {
+      links[i].classList.remove('active')
+    }
+  } 
+  
+  linkContact.classList.add('active')
+  
+  for (let i = 0; i < sections.length; i += 1) {
+    if (!sections[i].classList.contains('hidden')){
+      sections[i].classList.add('hidden')
+    }
   }
 
-  sectionAdd.classList.add('hidden');
-
-  if (sectionList.classList.contains('hidden')) {
-    return true;
-  }
-  sectionList.classList.add('hidden');
+  sectionContact.classList.remove('hidden')
 });
