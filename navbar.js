@@ -7,7 +7,7 @@ const linkContact = document.getElementById('contact-link');
 const sectionList = document.getElementById('list');
 const sectionAdd = document.getElementById('add');
 const sectionContact = document.getElementById('contact');
-
+    
 linkList.addEventListener('click', () => {
   if (sectionList.classList.contains('hidden')) {
     sectionList.classList.remove('hidden');
@@ -43,9 +43,9 @@ linkAdd.addEventListener('click', () => {
     sectionList.classList.add('hidden');
 
     if (sectionContact.classList.contains('hidden')) {
-      return true;
-    }
-    sectionContact.classList.add('hidden');
+        return true;
+      }
+      sectionContact.classList.add('hidden');
   }
   if (sectionList.classList.contains('hidden')) {
     return true;

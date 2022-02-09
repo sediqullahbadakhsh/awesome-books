@@ -74,6 +74,10 @@ table tbody tr {
   border-bottom: none;
 }
 
+table tbody tr:nth-child(even) {
+background-color: rgba(128, 128, 128, 0.411);
+}
+
 .delete {
   cursor: pointer;
 }
@@ -142,9 +146,10 @@ footer {
   position: absolute;
   bottom: 0%;
   width: 100%;
-  text-align: center;
+  text-align: left;
   height: 40px;
   font-weight: 800;
   border-top: solid 2px black;
   padding-top: 5px;
+  padding-left: 60px;
 }
